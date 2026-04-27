@@ -1,5 +1,4 @@
 # AlgoRealm
-
 A dark corrupted futuristic game UI for an algorithmic coding platform. Built with React + Vite.
 
 ## Stack
@@ -19,10 +18,6 @@ A dark corrupted futuristic game UI for an algorithmic coding platform. Built wi
 npm install
 npm run dev
 ```
-
-Then open [http://localhost:5173](http://localhost:5173)
-
----
 
 ## Pages
 
@@ -65,22 +60,6 @@ document.getElementById('phaser-world-mount')
 document.getElementById('phaser-arena-mount')
 ```
 
-Example integration:
-
-```js
-import Phaser from 'phaser'
-
-const config = {
-  type: Phaser.AUTO,
-  parent: 'phaser-world-mount',
-  width: '100%',
-  height: 420,
-  transparent: true,
-  scene: { /* ... */ }
-}
-
-const game = new Phaser.Game(config)
-```
 
 ---
 
@@ -117,22 +96,4 @@ algorealm/
         ├── Heist.jsx / .module.css
         ├── Leaderboard.jsx / .module.css
         └── Profile.jsx / .module.css
-```
-
----
-
-## Design Tokens
-
-All design tokens are defined in `src/styles/globals.css` as CSS custom properties:
-
-```css
---cyan: #00f5ff        /* Primary accent */
---purple: #a855f7      /* Secondary accent */
---red-corrupt: #ff3366 /* Danger / arena */
---orange-warn: #ff9500 /* Warning / streak */
---green-ok: #00ff88    /* Success */
---bg-void: #04040a     /* Deepest background */
---font-display: 'Orbitron', monospace
---font-mono: 'Share Tech Mono', monospace
---font-body: 'Rajdhani', sans-serif
 ```
