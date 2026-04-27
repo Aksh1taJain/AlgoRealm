@@ -1,0 +1,117 @@
+.wrapper {
+  position: fixed;
+  bottom: 90px;
+  right: 24px;
+  width: 300px;
+  background: var(--bg-panel);
+  border: 1px solid rgba(0, 245, 255, 0.4);
+  border-radius: 16px;
+  padding: 24px 20px 18px;
+  z-index: 500;
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.8),
+    0 0 40px rgba(0,245,255,0.15),
+    inset 0 1px 0 rgba(0,245,255,0.1);
+  overflow: hidden;
+  text-align: center;
+}
+
+.wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(0,245,255,0.08), transparent 60%);
+  pointer-events: none;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+.close:hover { color: var(--text-primary); }
+
+.iconWrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.iconCircle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,245,255,0.15), rgba(168,85,247,0.1));
+  border: 1px solid rgba(0,245,255,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 30px rgba(0,245,255,0.3);
+}
+
+.starIcon {
+  color: var(--cyan);
+  filter: drop-shadow(0 0 8px var(--cyan));
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--cyan);
+  margin-bottom: 4px;
+  text-shadow: 0 0 10px rgba(0,245,255,0.5);
+}
+
+.subtitle {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.rewards {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.rewardChip {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  background: rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--c, var(--cyan));
+  font-weight: 600;
+}
+
+.timerBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--cyan), var(--purple));
+  transform-origin: left;
+}
+
+.particle {
+  pointer-events: none;
+  z-index: 10;
+}

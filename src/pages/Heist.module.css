@@ -1,0 +1,410 @@
+.page { display: flex; flex-direction: column; gap: 24px; }
+
+.header { }
+.title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+.subtitle {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+/* Heist list */
+.heistList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.listLabel {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.heistItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: var(--bg-card-solid);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s;
+  gap: 12px;
+}
+.heistItem:hover {
+  border-color: var(--h-color);
+  background: var(--bg-elevated);
+}
+.heistItemActive {
+  border-color: var(--h-color) !important;
+  border-left-width: 2px;
+  background: rgba(0,245,255,0.03);
+}
+.heistCompleted { opacity: 0.5; }
+
+.heistItemLeft { flex: 1; min-width: 0; }
+.heistItemStatus {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.heistItemName {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--text-primary);
+  margin-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.heistItemMeta {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--text-muted);
+}
+
+.heistItemPhase {
+  font-family: var(--font-display);
+  font-size: 11px;
+  color: var(--h-color);
+  flex-shrink: 0;
+}
+
+.newHeistBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  background: rgba(0,0,0,0.2);
+  border: 1px dashed var(--border-subtle);
+  border-radius: 10px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+  transition: all 0.2s;
+}
+.newHeistBtn:hover {
+  border-color: var(--border-dim);
+  color: var(--text-secondary);
+}
+
+/* Heist detail */
+.heistDetail {
+  background: var(--bg-card-solid);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.detailHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.detailStatus {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+.diffTag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  padding: 2px 8px;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  opacity: 0.8;
+}
+
+.detailTitle {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+.detailDesc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Phases */
+.phaseSection { margin-bottom: 20px; }
+.phaseLabel {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.phaseTrack {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  position: relative;
+}
+
+.phaseNode {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--border-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  background: var(--bg-panel);
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+.phaseDone {
+  background: rgba(0,245,255,0.1);
+  border-color: var(--cyan);
+  color: var(--cyan);
+}
+.phaseCurrent {
+  background: rgba(168,85,247,0.1);
+  border-color: var(--purple);
+  color: var(--purple);
+  box-shadow: 0 0 12px rgba(168,85,247,0.3);
+  animation: pulse-purple 2s infinite;
+}
+
+.phaseLine {
+  flex: 1;
+  height: 2px;
+  background: rgba(255,255,255,0.05);
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  overflow: hidden;
+}
+.phaseLineFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--cyan), var(--purple));
+  box-shadow: 0 0 6px rgba(0,245,255,0.4);
+}
+
+/* Team */
+.teamSection { margin-bottom: 20px; }
+.teamLabel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+.teamRoster { display: flex; flex-direction: column; gap: 8px; }
+
+.memberSlot {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background: rgba(0,0,0,0.2);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+}
+.emptySlot {
+  border-style: dashed;
+  opacity: 0.5;
+}
+
+.memberAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 7px;
+  background: linear-gradient(135deg, var(--cyan-dark), var(--purple-dark));
+  border: 1px solid var(--border-active);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 12px;
+  color: var(--cyan);
+  flex-shrink: 0;
+}
+.emptyAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 7px;
+  border: 1px dashed var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+.memberInfo { flex: 1; }
+.memberName {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-primary);
+  letter-spacing: 1px;
+}
+.memberRole {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--purple);
+  letter-spacing: 1px;
+}
+.emptyLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+}
+.memberReady {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  padding: 3px 8px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+}
+.isReady {
+  color: #00ff88;
+  border-color: rgba(0,255,136,0.3);
+  background: rgba(0,255,136,0.06);
+}
+
+/* Rewards */
+.rewardSection { margin-bottom: 16px; }
+.rewardLabel {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+.rewardRow { display: flex; gap: 10px; }
+.rewardItem {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px;
+  background: rgba(0,0,0,0.2);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--r, var(--cyan));
+}
+
+/* Time */
+.timeLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+/* Actions */
+.actions { }
+.joinBtn, .resumeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 13px;
+  border-radius: 10px;
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: 2px;
+  transition: all 0.2s;
+}
+.joinBtn {
+  background: linear-gradient(135deg, rgba(0,255,136,0.1), rgba(0,245,255,0.1));
+  border: 1px solid rgba(0,255,136,0.35);
+  color: #00ff88;
+}
+.joinBtn:hover {
+  background: linear-gradient(135deg, rgba(0,255,136,0.2), rgba(0,245,255,0.15));
+  box-shadow: 0 0 20px rgba(0,255,136,0.1);
+}
+.resumeBtn {
+  background: linear-gradient(135deg, rgba(0,245,255,0.1), rgba(168,85,247,0.1));
+  border: 1px solid rgba(0,245,255,0.3);
+  color: var(--cyan);
+}
+.resumeBtn:hover { background: linear-gradient(135deg, rgba(0,245,255,0.2), rgba(168,85,247,0.15)); }
+
+.completedBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  background: rgba(0,255,136,0.06);
+  border: 1px solid rgba(0,255,136,0.2);
+  border-radius: 10px;
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #00ff88;
+}
+
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+}
