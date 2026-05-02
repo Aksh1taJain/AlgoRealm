@@ -1,0 +1,203 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.gateNotice {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255,149,0,0.06);
+  border-bottom: 1px solid rgba(255,149,0,0.15);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.gateNotice strong { color: #ff9500; }
+
+.editorSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: rgba(0,0,0,0.35);
+}
+
+.editorHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  background: rgba(0,0,0,0.3);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.editorDots { display: flex; gap: 6px; }
+
+.editorTitle {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  flex: 1;
+}
+
+.readOnlyTag {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  color: #ff9500;
+  padding: 2px 7px;
+  border: 1px solid rgba(255,149,0,0.3);
+  border-radius: 3px;
+}
+
+.testArea {
+  flex: 1;
+  padding: 14px 16px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.65;
+  color: var(--text-primary);
+  resize: none;
+  caret-color: #00ff88;
+  min-height: 250px;
+}
+
+.testArea[readonly] { cursor: default; opacity: 0.7; }
+
+/* Results */
+.results {
+  border-top: 1px solid var(--border-subtle);
+  padding: 14px 16px;
+  background: rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.resultsSummary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.summaryLabel {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+}
+
+.summaryStats {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+}
+
+.passed { display: flex; align-items: center; gap: 5px; color: #00ff88; }
+.failed { display: flex; align-items: center; gap: 5px; color: #ff3366; }
+.total  { color: var(--text-muted); }
+
+.caseList { display: flex; flex-direction: column; gap: 5px; }
+
+.caseRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border-radius: 6px;
+  border: 1px solid;
+}
+
+.casePassed {
+  background: rgba(0,255,136,0.04);
+  border-color: rgba(0,255,136,0.15);
+  color: #00ff88;
+}
+
+.caseFailed {
+  background: rgba(255,51,102,0.04);
+  border-color: rgba(255,51,102,0.15);
+  color: #ff3366;
+}
+
+.caseIcon { flex-shrink: 0; }
+
+.caseLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  flex: 1;
+}
+
+.caseError {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--text-muted);
+}
+
+.caseError code {
+  color: #ff9500;
+  padding: 1px 4px;
+  background: rgba(255,149,0,0.1);
+  border-radius: 3px;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: 10px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--border-subtle);
+  background: rgba(0,0,0,0.2);
+  flex-shrink: 0;
+}
+
+.runBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  background: rgba(0,255,136,0.08);
+  border: 1px solid rgba(0,255,136,0.25);
+  border-radius: 8px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: #00ff88;
+  transition: all 0.2s;
+}
+
+.runBtn:hover:not(.btnDisabled) {
+  background: rgba(0,255,136,0.14);
+  box-shadow: 0 0 14px rgba(0,255,136,0.1);
+}
+
+.submitBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  background: rgba(168,85,247,0.08);
+  border: 1px solid rgba(168,85,247,0.25);
+  border-radius: 8px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: #a855f7;
+  transition: all 0.2s;
+}
+
+.submitBtn:hover:not(.btnDisabled) {
+  background: rgba(168,85,247,0.14);
+  box-shadow: 0 0 14px rgba(168,85,247,0.1);
+}
+
+.btnDisabled { opacity: 0.35; cursor: not-allowed; }

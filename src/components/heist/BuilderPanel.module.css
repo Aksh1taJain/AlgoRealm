@@ -1,0 +1,207 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 0;
+}
+
+/* Gate notice */
+.gateNotice {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255,149,0,0.06);
+  border-bottom: 1px solid rgba(255,149,0,0.15);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+
+.gateNotice strong { color: #ff9500; }
+
+/* Editor */
+.editorContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: rgba(0,0,0,0.35);
+  overflow: hidden;
+}
+
+.editorHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  background: rgba(0,0,0,0.3);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  flex-shrink: 0;
+}
+
+.editorDots { display: flex; gap: 6px; }
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+.editorTitle {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  flex: 1;
+}
+
+.presenceCursor {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 1px;
+  padding: 2px 7px;
+  border: 1px solid;
+  border-radius: 3px;
+  opacity: 0.7;
+}
+
+.readOnlyTag {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  color: #ff9500;
+  padding: 2px 7px;
+  border: 1px solid rgba(255,149,0,0.3);
+  border-radius: 3px;
+  background: rgba(255,149,0,0.06);
+}
+
+/* Editor body */
+.editorBody {
+  flex: 1;
+  display: flex;
+  overflow: auto;
+  min-height: 400px;
+}
+
+.editorBody::-webkit-scrollbar { width: 5px; height: 5px; }
+.editorBody::-webkit-scrollbar-track { background: transparent; }
+.editorBody::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+
+.lineNumbers {
+  padding: 14px 0;
+  background: rgba(0,0,0,0.2);
+  border-right: 1px solid rgba(255,255,255,0.05);
+  min-width: 42px;
+  text-align: right;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.lineNum {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.18);
+  padding: 0 10px;
+}
+
+.codeArea {
+  flex: 1;
+  padding: 14px 16px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.65;
+  color: var(--text-primary);
+  resize: none;
+  caret-color: var(--cyan);
+  tab-size: 2;
+  white-space: pre;
+  overflow: visible;
+}
+
+.codeArea::selection {
+  background: rgba(0, 245, 255, 0.12);
+}
+
+.codeArea[readonly] { cursor: default; opacity: 0.7; }
+
+/* Actions */
+.actions {
+  padding: 12px 16px;
+  border-top: 1px solid var(--border-subtle);
+  background: rgba(0,0,0,0.2);
+  flex-shrink: 0;
+}
+
+.vetoWarning {
+  padding: 8px 12px;
+  background: rgba(255,51,102,0.08);
+  border: 1px solid rgba(255,51,102,0.2);
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: #ff3366;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.actionRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.editorHints {
+  display: flex;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+
+.requestBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  background: linear-gradient(135deg, rgba(0,245,255,0.1), rgba(168,85,247,0.08));
+  border: 1px solid rgba(0,245,255,0.3);
+  border-radius: 8px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: var(--cyan);
+  transition: all 0.2s;
+}
+
+.requestBtn:hover:not(.btnDisabled) {
+  background: linear-gradient(135deg, rgba(0,245,255,0.18), rgba(168,85,247,0.14));
+  box-shadow: 0 0 16px rgba(0,245,255,0.15);
+}
+
+.btnDisabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.waitSpinner {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(0,245,255,0.2);
+  border-top-color: var(--cyan);
+  animation: spin 1s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

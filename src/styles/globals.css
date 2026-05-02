@@ -220,3 +220,8 @@ body::after {
   92% { transform: skew(-1deg); filter: hue-rotate(-45deg); }
   93% { transform: skew(0deg); filter: none; }
 }
+@keyframes pulse-dot {
+  0% { opacity: 0.5; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+  100% { opacity: 0.5; transform: scale(0.8); }
+}

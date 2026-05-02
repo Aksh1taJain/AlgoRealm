@@ -1,0 +1,154 @@
+.roster { margin-bottom: 16px; }
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.cards { display: flex; flex-direction: column; gap: 8px; }
+
+.card {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  align-items: start;
+  gap: 10px;
+  padding: 11px 13px;
+  background: var(--bg-card-solid);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--role-color);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.card:hover {
+  border-color: var(--role-color);
+  background: var(--bg-elevated);
+}
+
+.card:hover::before { opacity: 1; }
+
+.cardActive {
+  border-color: var(--role-color) !important;
+  background: rgba(0,0,0,0.3) !important;
+}
+
+.cardActive::before { opacity: 1 !important; }
+
+/* Online dot */
+.onlineDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+/* Avatar */
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border: 1px solid;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 13px;
+  color: var(--role-color);
+  flex-shrink: 0;
+}
+
+/* Info */
+.info {}
+
+.name {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-primary);
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.roleBadge {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  margin-bottom: 4px;
+}
+
+.statusRow {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+
+.statusDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Permissions */
+.perms {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  justify-self: end;
+}
+
+.permItem {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 8px;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.permDot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--role-color);
+  flex-shrink: 0;
+}
+
+/* You badge */
+.youBadge {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-family: var(--font-mono);
+  font-size: 7px;
+  letter-spacing: 1.5px;
+  color: var(--role-color);
+  padding: 2px 5px;
+  border: 1px solid var(--role-color);
+  border-radius: 3px;
+  opacity: 0.8;
+}

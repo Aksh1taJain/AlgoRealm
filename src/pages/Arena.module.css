@@ -523,3 +523,13 @@
   .modeGrid { grid-template-columns: 1fr; }
   .liveBanner { flex-wrap: wrap; }
 }
+@keyframes pulse-dot {
+  0% { opacity: 0.5; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.2); }
+  100% { opacity: 0.5; transform: scale(0.9); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}

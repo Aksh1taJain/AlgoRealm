@@ -1,4 +1,6 @@
 // ===== ALGOREALM MOCK DATA =====
+// NOTE: Keep HEIST_ACTIVE_MISSION in sync with backend if you later add
+// a real mission-fetch API: GET /api/heist/:id
 
 export const PLAYER = {
   id: 'usr_7x9k2m',
@@ -301,6 +303,25 @@ export const HEIST_MISSIONS = [
     difficulty: 'HARD',
   },
 ]
+
+// ─── Active Heist Mission (used by HeistMode page) ────────────────────────────
+// TODO: Replace with API call: GET /api/heist/active
+// Shape matches HEIST_MISSIONS[0] but with richer algorithm detail
+
+export const HEIST_ACTIVE_MISSION = {
+  id: 'h1',
+  name: 'OPERATION: DEEP FREEZE',
+  description: 'Breach the CryoCore vault by solving the rotation algorithm. Fortress integrity drops with each failed test.',
+  difficulty: 'EXTREME',
+  algorithm: 'Find Minimum in Rotated Sorted Array',
+  timeLimit: '4h 22m',
+  reward: { coins: 2400, xp: 980, fragment: 12 },
+  objectives: [
+    'Implement O(log n) binary search solution',
+    'All test cases must pass',
+    'Complexity must be approved by Analyst',
+  ],
+}
 
 export const LEADERBOARD = [
   { rank: 1, username: 'ZERO_BINARY', tier: 'PHANTOM', score: 98_420, streak: 87, winRate: 94, change: 0 },
