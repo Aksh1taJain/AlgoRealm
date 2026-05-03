@@ -11,7 +11,6 @@ import Profile from './pages/Profile'
 import RewardPopup from './components/RewardPopup'
 import { socket } from './socket'
 import WorldSocketTest from './pages/WorldSocketTest'
-<Route path="/socket-test" element={<WorldSocketTest />} />
 export default function App() {
   const [reward, setReward] = useState(null)
 
@@ -38,6 +37,7 @@ export default function App() {
     <>
       <Layout showReward={showReward}>
         <Routes>
+          <Route path="/socket-test" element={<WorldSocketTest />} />
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
           <Route path="/dashboard" element={<Dashboard showReward={showReward} />} />
           <Route path="/world" element={<World showReward={showReward} />} />
