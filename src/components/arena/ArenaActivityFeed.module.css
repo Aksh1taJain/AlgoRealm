@@ -1,0 +1,73 @@
+.feed {
+  background: var(--bg-card-solid);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: var(--shadow-card);
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 220px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.list::-webkit-scrollbar { width: 3px; }
+.list::-webkit-scrollbar-track { background: transparent; }
+.list::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 2px; }
+
+.entry {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  overflow: hidden;
+}
+
+.entry:last-child { border-bottom: none; }
+
+.entryBar {
+  width: 2px;
+  border-radius: 1px;
+  flex-shrink: 0;
+  align-self: stretch;
+  min-height: 12px;
+  opacity: 0.6;
+}
+
+.entryIcon {
+  font-size: 10px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  opacity: 0.8;
+}
+
+.entryText {
+  flex: 1;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  letter-spacing: 0.3px;
+}
+
+.entryTs {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 1px;
+}

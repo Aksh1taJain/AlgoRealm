@@ -1,0 +1,153 @@
+.scoreboard {
+  background: var(--bg-card-solid);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: var(--shadow-elevated);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.resultBanner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  border: 1px solid;
+  border-radius: 12px;
+}
+
+.resultTitle {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  margin-bottom: 3px;
+}
+
+.winnerName {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 1.5px;
+}
+
+/* Rounds */
+.rounds {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.roundCard {
+  padding: 14px;
+  background: rgba(0,0,0,0.2);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+}
+
+.roundLabel {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.roundWinner {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.roundRobust {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.roundNote {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Final scores */
+.scores {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.scoreCard { text-align: center; }
+
+.scoreName {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-secondary);
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.scoreVal {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.scoreLabel {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  color: var(--text-muted);
+  letter-spacing: 1.5px;
+}
+
+.scoreSep {
+  font-family: var(--font-display);
+  font-size: 24px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+/* Rewards */
+.rewards {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.rewardItem {
+  padding: 8px 16px;
+  background: rgba(0,0,0,0.2);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+
+/* Button */
+.newBattleBtn {
+  width: 100%;
+  padding: 13px;
+  background: linear-gradient(135deg, rgba(255,51,102,0.1), rgba(168,85,247,0.07));
+  border: 1px solid rgba(255,51,102,0.3);
+  border-radius: 10px;
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #ff3366;
+  transition: all 0.2s;
+}
+
+.newBattleBtn:hover {
+  box-shadow: 0 0 20px rgba(255,51,102,0.12);
+}

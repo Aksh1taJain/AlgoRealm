@@ -381,3 +381,39 @@ export const RANKS = [
   { name: 'PHANTOM', tier: 5, color: '#ff9500', minXp: 70000 },
   { name: 'VOID LORD', tier: 6, color: '#ff3366', minXp: 150000 },
 ]
+// ─── ARENA_BATTLE_PROBLEM ─────────────────────────────────────────────────────
+// Used by the Algorithm Battles Arena page.
+// TODO: Replace with API call: GET /api/arena/problem?difficulty=HARD&roomId=...
+
+export const ARENA_BATTLE_PROBLEM = {
+  id: 'p_twosumcorrupt',
+  title: 'Two Sum — Corrupted Edition',
+  difficulty: 'HARD',
+  tags: ['Hash Map', 'Arrays', 'Defensive'],
+  statement:
+    'Given a corrupted integer array nums and a target integer target, return indices of the two numbers that add up to target. The array may contain duplicates, negative numbers, zero values, or be empty. Your solution MUST handle all edge cases without throwing.',
+  examples: [
+    {
+      input:  'nums = [2, 7, 11, 15], target = 9',
+      output: '[0, 1]',
+      note:   'nums[0] + nums[1] = 2 + 7 = 9',
+    },
+    {
+      input:  'nums = [3, 3], target = 6',
+      output: '[0, 1]',
+      note:   'Handles duplicates',
+    },
+    {
+      input:  'nums = [], target = 0',
+      output: '[]',
+      note:   'Empty input — must not throw',
+    },
+  ],
+  constraints: [
+    '0 ≤ nums.length ≤ 10⁴',
+    '-10⁹ ≤ nums[i] ≤ 10⁹',
+    '-10⁹ ≤ target ≤ 10⁹',
+    'May have 0 or 1 valid solutions',
+    'Must handle empty, null, or undefined input gracefully',
+  ],
+}

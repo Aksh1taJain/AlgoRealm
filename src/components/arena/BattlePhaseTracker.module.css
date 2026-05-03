@@ -1,0 +1,108 @@
+.tracker {
+  background: var(--bg-card-solid);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 16px 18px;
+  box-shadow: var(--shadow-card);
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.track {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.phaseItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  position: relative;
+  gap: 5px;
+}
+
+.node {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+
+.node_locked {
+  background: rgba(0,0,0,0.3);
+  border-color: var(--border-subtle);
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+.node_active {
+  background: rgba(255,51,102,0.1);
+  border-color: #ff3366;
+  color: #ff3366;
+  box-shadow: 0 0 14px rgba(255,51,102,0.35);
+  animation: pulse-node 2s infinite;
+}
+
+.node_completed {
+  background: rgba(0,245,255,0.08);
+  border-color: var(--cyan);
+  color: var(--cyan);
+}
+
+@keyframes pulse-node {
+  0%, 100% { box-shadow: 0 0 14px rgba(255,51,102,0.35); }
+  50% { box-shadow: 0 0 24px rgba(255,51,102,0.6); }
+}
+
+.activePulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff3366;
+  animation: pulse-dot 1.5s infinite;
+}
+
+.phaseLabel {
+  font-family: var(--font-mono);
+  font-size: 7px;
+  letter-spacing: 0.8px;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.label_active    { color: #ff3366; }
+.label_completed { color: var(--cyan); }
+.label_locked    { color: var(--text-muted); opacity: 0.6; }
+
+/* Connector */
+.connector {
+  position: absolute;
+  top: 13px;
+  left: 50%;
+  width: 100%;
+  height: 1px;
+  background: rgba(255,255,255,0.06);
+  overflow: hidden;
+}
+
+.connectorFill {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, var(--cyan), rgba(0,245,255,0.3));
+  transform-origin: left;
+}
