@@ -25,8 +25,8 @@ npm run dev
 | `/dashboard` | Main hub with stats, quests, daily challenges |
 | `/world` | Interactive zone map with Phaser.js mount points |
 | `/practice` | Filterable quest browser by difficulty/type |
-| `/arena` | PvP matchmaking — duel, battle royale, team raid |
-| `/heist` | Co-op team missions with phase tracking |
+| `/arena` | 1vs1 one will write code and the other player will right test cases ai will judge |
+| `/heist` | 3 player team one will write code, other will write the test cases and the third player will do the time/space analysis |
 | `/leaderboard` | Global rankings with podium + full table |
 | `/profile` | Player identity, badges, rank tree |
 
